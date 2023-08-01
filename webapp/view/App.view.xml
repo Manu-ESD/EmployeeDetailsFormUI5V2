@@ -1,0 +1,51 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:core="sap.ui.core" controllerName="mark.one.controller.App"
+	displayBlock="false">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<FlexBox class="sapUiMediumMargin" direction="Column">
+						<Label text="Personal Details" labelFor="productInput" />
+						<FlexBox class="sapUiSmallMargin" justifyContent="SpaceBetween" width="80%"
+							alignItems="Center">
+							<Label text="FirstName" labelFor="FirstName" required="true" />
+							<Input id="FirstName" placeholder="Enter First Name" required="true" />
+							<Label text="MiddleName" labelFor="MiddleName" />
+							<Input id="MiddleName" placeholder="Enter Middle Name" />
+							<Label text="LastName" labelFor="LastName" required="true" />
+							<Input id="LastName" placeholder="Enter Last Name" required="true" />
+						</FlexBox>
+						<FlexBox class="sapUiSmallMargin" justifyContent="SpaceBetween" width="50%"
+							alignItems="Center">
+							<Label text="Date Of Birth" labelFor="DOB" required="true" />
+							<DatePicker id="DP1" placeholder="Enter Date" change="handleChange"
+								class="sapUiSmallMarginBottom" />
+							<Label text="Gender" labelFor="Gender" />
+							<Select id="Gender" forceSelection="false"
+								selectedKey="{/SelectedProduct}"
+								items="{ path: '/ProductCollection', sorter: { path: 'Name' } }">
+								<core:Item key="{ProductId}" text="{Name}" />
+							</Select>
+						</FlexBox>
+						<FlexBox class="sapUiSmallMargin" justifyContent="Start" width="100%"
+							alignItems="Center" alignContent="SpaceBetween">
+							<Button type="Accept" text="Submit" press="onSubmit" width="500px"></Button>
+
+						</FlexBox>
+					</FlexBox>
+
+					<FlexBox class="sapUiSmallMargin" justifyContent="Center" width="100%"
+						alignItems="Center" alignContent="SpaceBetween" direction="Column">
+						<Label text="RESULT"></Label>
+						<TextArea width="500px" class="sapUiSmallMargin"
+							value="None"
+							id="Resultdisplay"
+							rows="8" />
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
