@@ -4,7 +4,7 @@
 	displayBlock="false">
 	<App>
 		<pages>
-			<Page title="{i18n>title}">
+			<Page title="Employee Details">
 				<content>
 					<FlexBox class="sapUiMediumMargin" direction="Column">
 						<Label text="Personal Details" labelFor="productInput" />
